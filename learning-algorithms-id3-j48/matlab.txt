@@ -1,0 +1,53 @@
+fprintf('Magazine - Watch - Sex - Class') 
+class1  = { 'Yes' 'Yes' 'Female' 'Yes' };               
+class2  = { 'Yes' 'Yes' 'Female' 'Yes' };                       
+class3  = { 'Yes' 'No'  'Male'   'Yes' };                       
+class4  = { 'Yes' 'No'  'Female' 'Yes' };                       
+class5  = { 'Yes' 'Yes' 'Male'   'Yes' };                       
+class6  = { 'Yes' 'No'  'Male'   'Yes' };               
+class7  = { 'Yes' 'No'  'Male'   'Yes' };                       
+class8  = { 'No'  'No'  'Male'   'No'  };                       
+class9  = { 'No'  'No'  'Female' 'No'  };                       
+class10 = { 'No'  'Yes' 'Male'   'No'  };
+
+matrix = [class1;class2;class3;class4;class5;class6;class7;class8;class9;class10]
+
+%EntropyClass   ClassYes=7/10     ClassNo=3/10
+EntropyClass = -0.7 * log2(0.7) - 0.3 * log2(0.3) 
+
+fprintf('----------- Split using "Magazine" Attribute: ----------------\n')
+
+%Magazine  (MagYes+ClassYes)/TotMagYes  (MagNo+ClassNo)/TotMagYes
+Entropy1Mag = -(7/7) * log2(7/7) - (0/7) * log2(0/7)
+
+%Magazine  (MagNo+ClassYes)/TotMagNo  (MagNo+ClassNo)/TotMagNo
+Entropy2Mag = -(0/3) * log2(0/3) - (3/3) * log2(3/3)
+
+% Information Gain              MagYes/TotalMag    MagNo/TotalMag
+GainMagazine = EntropyClass  - (7/10)*Entropy1 - (3/10)*Entropy2
+
+fprintf('----------- Split using "Watch" Attribute: -------------------\n')
+
+%Watch  (WatchYes+ClassYes)/TotWatchYes  (WatchNo+ClassNo)/TotWatchYes
+Entropy1Watch  = -(3/4) * log2(3/4) -(1/4) * log2(1/4)
+
+%Watch  (WatchNo+ClassYes)/TotWatchNo  (WatchNo+ClassNo)/TotWatchNo
+Entropy2Watch  = -(4/6) * log2(4/6) -(2/6) * log2(2/6)
+
+% Information Gain        WatchYes/TotalWatch  WatchNo/TotalWatch
+GainWatch = EntropyClass - (4/10)*Entropy1 - (6/10)*Entropy2
+
+fprintf('----------- Split using "Sex" Attribute: -------------------\n')
+
+%SexAttr  (SexFem+ClassYes)/TotalFem)  SexFem+ClassNo)/TotalFem)
+Entropy1Sex  = -(3/4) * log2(3/4) -(1/4) * log2(1/4)
+
+%SexAttr  (SexMale+ClassYes)/TotalMale   (SexMale+ClassNo)/TotalMale
+Entropy2Sex  = -(4/6) * log2(4/6) -(2/6) * log2(2/6)
+
+%Information Gain         Female/TotalSex    Male/TotalSex
+GainSex = EntropyClass - (4/10)*Entropy1 - (6/10)*Entropy2
+
+fprintf('-------- Result of Information Gain Lowest is Greatest -----\n\n');
+fprintf('The highest information gain is magazine attribute.\n')
+fprintf('Magazine attribute will be use to split for ID3/J4.8 methods.\n')
