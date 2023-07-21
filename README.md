@@ -28,6 +28,7 @@ Machine learning has numerous applications, such as image and speech recognition
 ---
 
 ### Datasets Archive
+[https://www.kaggle.com/datasets/](https://www.kaggle.com/datasets)
 [http://lib.stat.cmu.edu/datasets/](http://lib.stat.cmu.edu/datasets/)
 
 ### Reference
