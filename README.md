@@ -28,8 +28,8 @@ Machine learning has numerous applications, such as image and speech recognition
 ---
 
 ### Datasets Archive
-[https://www.kaggle.com/datasets/](https://www.kaggle.com/datasets)
-[http://lib.stat.cmu.edu/datasets/](http://lib.stat.cmu.edu/datasets/)
+* [https://www.kaggle.com/datasets/](https://www.kaggle.com/datasets)
+* [http://lib.stat.cmu.edu/datasets/](http://lib.stat.cmu.edu/datasets/)
 
 ### Reference
 [https://www.datacamp.com/community/tutorials/apache-spark-tutorial-machine-learning](https://www.datacamp.com/community/tutorials/apache-spark-tutorial-machine-learning)
